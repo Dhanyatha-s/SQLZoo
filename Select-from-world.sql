@@ -53,3 +53,14 @@
     select name, round(gdp/population, -3) as trillion_gdp 
     from world
     where gdp >= 1000000000000
+
+-- 11 Show the name and capital where the name and the capital have the same number of characters.
+    select name, capital 
+    from world
+    where length(name) = length(capital)
+
+-- 12 Show the name and the capital where the first letters of each match. Don't include countries where the name and the capital are the same word.
+    SELECT name, capital
+    FROM world
+    where left(name,1) = left(capital,1) and name!= capital
+    
